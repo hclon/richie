@@ -1,0 +1,35 @@
+{% extends "richie/fullwidth.html" %}
+{% load cms_tags i18n %}
+
+{# This is a generic page template that will list and link its child pages #}
+
+{% block content %}
+<div class="generic-list">
+
+    <h1 class="generic-list__title">{{ current_page.id }}: {{ current_page.get_title }}</h1>
+    <ul class="course-child-list">
+        {% for page in current_page.get_child_pages %}
+        <li class="course-child">
+            <a class="course-child__body" href="{{ page.get_absolute_url }}">
+                <div class="course-child__body__top">
+                    <div class="course-child__image">{% show_placeholder "course_teaser" page %}</div>
+                </div>
+                <div class="course-child__body__middle">
+                    <div class="course-child__body__org">
+                        {{ page.course.organization_main.code }}
+                    </div>
+                    <div class="course-child__body__title">
+                        {{ page.get_title }}
+                    </div>
+                </div>
+                <div class="course-child__body__bottom">
+                    <div class="course-child__date">{% trans "Start" %}: {{ page.course.course_runs.last.start }}</div>
+                </div>                
+            </a>
+        </li>
+        {% empty %}
+            <span>{% trans "This page has no child objects" %}</span>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

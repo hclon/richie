@@ -7,19 +7,17 @@
 <div class="generic-list">
 
     <h1 class="generic-list__title">{{ current_page.id }}: {{ current_page.get_title }}</h1>
-
-    {% for page in current_page.get_child_pages %}
-
-    <ul class="generic-list__items">
-
-        <li class="generic-list__item">
-           <a href="{{ page.get_absolute_url }}">{{ page.get_title }}</a>
+    <ul class="course-glimpse-container">
+        {% for page in current_page.get_child_pages %}
+        <li class="course-glimpse">
+            <a class="course-glimpse__body" href="{{ page.get_absolute_url }}">
+                <div class="course-glimpse__image">{% show_placeholder "logo" page %}</div>
+                <div class="course-glimpse__title">{{ page.get_title }}</div>
+            </a>
         </li>
-
+        {% empty %}
+            <span>{% trans "This page has no child objects" %}</span>
+        {% endfor %}
     </ul>
-    {% empty %}
-        <span>{% trans "This page has no child objects" %}</span>
-    {% endfor %}
-
 </div>
 {% endblock content %}

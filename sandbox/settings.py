@@ -294,6 +294,7 @@ class Base(DRFMixin, ElasticSearchMixin, Configuration):
         ("search/search.html", _("Search")),
         ("richie/fullwidth.html", "Fullwidth"),
         ("richie/child_pages_list.html", _("List of child pages")),
+        ("richie/child_courses_list.html", _("List of child courses")),
     )
     CMS_PERMISSION = True
 
