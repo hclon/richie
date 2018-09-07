@@ -29,6 +29,17 @@
   
       &__image {
         @extend .card-img-top;
+        iframe,
+        embed,
+        object,
+        video,
+        img, {
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 300px;
+          border: 0;
+        }
       }
   
       &__body {

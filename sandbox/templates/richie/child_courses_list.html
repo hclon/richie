@@ -16,14 +16,14 @@
                 </div>
                 <div class="course-child__body__middle">
                     <div class="course-child__body__org">
-                        {{ page.course.organization_main.code }}
+                        {{ page.course.organization_main.extended_object.get_title }}
                     </div>
                     <div class="course-child__body__title">
                         {{ page.get_title }}
                     </div>
                 </div>
                 <div class="course-child__body__bottom">
-                    <div class="course-child__date">{% trans "Start" %}: {{ page.course.course_runs.last.start }}</div>
+                    <div class="course-child__date">{% trans "Commence le" %}: {{ page.course.course_runs.last.start }}</div>
                 </div>                
             </a>
         </li>
