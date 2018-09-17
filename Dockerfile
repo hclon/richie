@@ -57,7 +57,7 @@ COPY . /app/
 # Copy front-end dependencies
 COPY --from=front-builder /app/src/richie/static/richie /app/src/richie/static/richie
 
-WORKDIR /app/sandbox
+WORKDIR /app
 
 # Gunicorn
 RUN mkdir -p /usr/local/etc/gunicorn
@@ -74,7 +74,7 @@ RUN chmod g=u /etc/passwd
 ENTRYPOINT [ "/app/bin/entrypoint" ]
 
 # The default command runs gunicorn WSGI server
-CMD gunicorn -c /usr/local/etc/gunicorn/richie.py wsgi:application
+CMD gunicorn -c /usr/local/etc/gunicorn/richie.py richie.wsgi:application
 
 # Un-privileged user running the application
 USER 10000

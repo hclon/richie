@@ -1,0 +1,130 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2018-10-30T09:51:13.296Z\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"MIME-Version: 1.0\n"
+"X-Generator: crowdin.com\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-Project: richie\n"
+"X-Crowdin-Language: fr-CA\n"
+"X-Crowdin-File: richie-front.pot\n"
+"Project-Id-Version: richie\n"
+"Last-Translator: sampaccoud <samuel@sampaccoud.com>\n"
+"Language-Team: French, Canada\n"
+"Language: fr_CA\n"
+"PO-Revision-Date: 2018-12-19 21:58\n"
+
+#. [settings.filters.availability.title] - Title for the "Availability" section of course filters (eg. Coming soon / Current session etc.)
+#. defaultMessage is:
+#. Availability
+#: src/richie-front/i18n/src/richie-front/js/settings.json
+msgid "Availability"
+msgstr "Disponibilité"
+
+#. [components.CloseIcon.closeLabel] - Accessibility label for the "x" disable icon on an active filer
+#. defaultMessage is:
+#. Close
+#: src/richie-front/i18n/src/richie-front/js/components/icons/CloseIcon.json
+msgid "Close"
+msgstr "Fermer"
+
+#. [settings.filters.availability.values.coming_soon] - Possible value for the "Availability" filter for courses
+#. defaultMessage is:
+#. Coming soon
+#: src/richie-front/i18n/src/richie-front/js/settings.json
+msgid "Coming soon"
+msgstr "Bientôt"
+
+#. [common.coursesHumanName] - Title/name to use when we display a list of courses
+#. defaultMessage is:
+#. Courses
+#: src/richie-front/i18n/src/richie-front/js/utils/commonMessages.json
+msgid "Courses"
+msgstr "Cours"
+
+#. [settings.filters.availability.values.current] - Possible value for the "Availability" filter for courses
+#. defaultMessage is:
+#. Current session
+#: src/richie-front/i18n/src/richie-front/js/settings.json
+msgid "Current session"
+msgstr "Session en cours"
+
+#. [settings.filters.language.en] - Language
+#. defaultMessage is:
+#. English
+#: src/richie-front/i18n/src/richie-front/js/settings.json
+msgid "English"
+msgstr "Anglais"
+
+#. [settings.filters.new.new] - Possible balue for the "New" filter for courses
+#. defaultMessage is:
+#. First session
+#: src/richie-front/i18n/src/richie-front/js/settings.json
+msgid "First session"
+msgstr "Première session"
+
+#. [settings.filters.language.fr] - Language
+#. defaultMessage is:
+#. French
+#: src/richie-front/i18n/src/richie-front/js/settings.json
+msgid "French"
+msgstr "Français"
+
+#. [settings.filters.language.title] - Title for the "Language" section of course filters (eg. FR / EN etc.)
+#. defaultMessage is:
+#. Language
+#: src/richie-front/i18n/src/richie-front/js/settings.json
+msgid "Language"
+msgstr "Langue"
+
+#. [components.CourseGlimpse.logoAltText] - Alternate text for the course logo in a course glimpse.
+#. defaultMessage is:
+#. Logo for {courseTitle} course.
+#: src/richie-front/i18n/src/richie-front/js/components/CourseGlimpse/CourseGlimpse.json
+msgid "Logo for {courseTitle} course."
+msgstr "Logo du cours {courseTitle}."
+
+#. [settings.filters.new.title] - Title for the "New" section of course filters
+#. defaultMessage is:
+#. New courses
+#: src/richie-front/i18n/src/richie-front/js/settings.json
+msgid "New courses"
+msgstr "Nouveaux cours"
+
+#. [common.organizationsHumanName] - Title/name to use when we display a list of organizations
+#. defaultMessage is:
+#. Organizations
+#: src/richie-front/i18n/src/richie-front/js/utils/commonMessages.json
+msgid "Organizations"
+msgstr "Organisations"
+
+#. [components.SearchSuggestField.searchFieldPlaceholder] - Placeholder text displayed in the search field when it is empty.
+#. defaultMessage is:
+#. Search for courses, organizations, subjects
+#: src/richie-front/i18n/src/richie-front/js/components/SearchSuggestField/SearchSuggestField.json
+msgid "Search for courses, organizations, subjects"
+msgstr "Recherchez des cours, organisations, sujets"
+
+#. [components.SearchSuggestField.searchFieldDefaultSearch] - Default query in the main search field. Lets users run a full text search
+#.       with whatever they have typed in.
+#. defaultMessage is:
+#. Search for {query} in courses...
+#: src/richie-front/i18n/src/richie-front/js/components/SearchSuggestField/SearchSuggestField.json
+msgid "Search for {query} in courses..."
+msgstr "Recherche de {query} dans les cours..."
+
+#. [components.CourseGlimpse.startsOn] - Shows the start date for a course in a course glimpse in a short format such as Sep 4, '1986'
+#. defaultMessage is:
+#. Starts on {date}
+#: src/richie-front/i18n/src/richie-front/js/components/CourseGlimpse/CourseGlimpse.json
+msgid "Starts on {date}"
+msgstr "Débute le {date}"
+
+#. [common.subjectsHumanName] - Title/name to use when we display a list of subjects
+#. defaultMessage is:
+#. Subjects
+#: src/richie-front/i18n/src/richie-front/js/utils/commonMessages.json
+msgid "Subjects"
+msgstr "Sujets"
+
