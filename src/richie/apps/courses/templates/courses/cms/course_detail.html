@@ -153,7 +153,7 @@
             </li>
             <li class="course-detail__aside__run__item__row">
               {% if run.state == 'is_open' %}
-              <a class="course-detail__aside__run__item__row__cta" href="#">{% trans "Enroll now" %}</a>
+              <a class="course-detail__aside__run__item__row__cta" href="{{ run.resource_link }}">{% trans "Enroll now" %}</a>
               {% elif run.state == 'is_ongoing' or run.state == 'is_closed' %}
               <button class="course-detail__aside__run__item__row__cta course-detail__aside__run__item__row__cta--projected">{% trans "Enrollment closed" %}</button>
               {% elif run.state == 'is_archived' %}
