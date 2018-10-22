@@ -187,7 +187,8 @@ $richie-course-detail-aside-main-org-background: $white;
       iframe,
       embed,
       object,
-      video {
+      video,
+      img {
         position: absolute;
         top: $richie-course-detail-teaser-object-padding-vertical;
         bottom: $richie-course-detail-teaser-object-padding-vertical;
