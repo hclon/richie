@@ -115,16 +115,9 @@ class OrganizationFactory(BLDPageExtensionDjangoModelFactory):
 
     class Meta:
         model = Organization
-        exclude = [
-            "page_in_navigation",
-            "page_languages",
-            "page_parent",
-            "page_template",
-            "page_title",
-        ]
+        exclude = ["languages", "parent", "template", "in_navigation", "title"]
 
-    # fields concerning the related page
-    page_template = Organization.TEMPLATE_DETAIL
+    template = Organization.TEMPLATE_DETAIL
 
     @factory.lazy_attribute_sequence
     def code(self, sequence):
@@ -164,16 +157,9 @@ class CourseFactory(PageExtensionDjangoModelFactory):
 
     class Meta:
         model = Course
-        exclude = [
-            "page_in_navigation",
-            "page_languages",
-            "page_parent",
-            "page_template",
-            "page_title",
-        ]
+        exclude = ["languages", "parent", "template", "in_navigation", "title"]
 
-    # fields concerning the related page
-    page_template = Course.TEMPLATE_DETAIL
+    template = Course.TEMPLATE_DETAIL
 
     @factory.post_generation
     # pylint: disable=unused-argument
@@ -337,43 +323,25 @@ class CourseRunFactory(PageExtensionDjangoModelFactory):
 
     class Meta:
         model = CourseRun
-        exclude = [
-            "page_in_navigation",
-            "page_languages",
-            "page_parent",
-            "page_template",
-            "page_title",
-        ]
+        exclude = ["parent", "template", "in_navigation", "title"]
 
-    # fields concerning the related page
-    page_template = CourseRun.TEMPLATE_DETAIL
-    page_title = factory.Sequence("session {:d}".format)
-
+    template = CourseRun.TEMPLATE_DETAIL
+    title = factory.Sequence("session {:d}".format)
     resource_link = factory.Faker("uri")
-
-    @factory.lazy_attribute
-    def page_languages(self):
-        """
-        Try getting the list of languages from the parent page and default to None.
-        """
-        return (
-            self.page_parent.get_languages()
-            if getattr(self, "page_parent", None)
-            else None
-        )
 
     @factory.lazy_attribute
     def languages(self):
         """
-        Try getting the list of languages from the parent page and default to a random set of
-        languages from the complete list of Django supported languages.
+        Try getting the list of languages from the parent page and default to None.
         """
         return (
             self.parent.get_languages()
             if getattr(self, "parent", None)
             else [
                 l[0]
-                for l in random.sample(settings.ALL_LANGUAGES, random.randint(1, 5))
+                for l in random.sample(
+                    settings.LANGUAGES, random.randint(1, len(settings.LANGUAGES))
+                )
             ]
         )
 
@@ -457,16 +425,9 @@ class SubjectFactory(BLDPageExtensionDjangoModelFactory):
 
     class Meta:
         model = Subject
-        exclude = [
-            "page_in_navigation",
-            "page_languages",
-            "page_parent",
-            "page_template",
-            "page_title",
-        ]
+        exclude = ["languages", "template", "in_navigation", "title", "parent"]
 
-    # fields concerning the related page
-    page_template = Subject.TEMPLATE_DETAIL
+    template = Subject.TEMPLATE_DETAIL
 
     @factory.post_generation
     # pylint: disable=unused-argument

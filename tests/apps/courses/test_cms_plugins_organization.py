@@ -50,7 +50,7 @@ class OrganizationPluginTestCase(CMSTestCase):
 
         # Create an organization
         organization = OrganizationFactory(
-            page_title={"en": "public title", "fr": "titre publique"}
+            title={"en": "public title", "fr": "titre publique"}
         )
         organization_page = organization.extended_object
 
@@ -147,7 +147,7 @@ class OrganizationPluginTestCase(CMSTestCase):
         self.client.login(username=staff.username, password="password")
 
         # Create a Organization
-        organization = OrganizationFactory(page_title="public title")
+        organization = OrganizationFactory(title="public title")
         organization_page = organization.extended_object
 
         # Create a page to add the plugin to

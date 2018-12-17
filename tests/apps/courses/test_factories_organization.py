@@ -18,7 +18,7 @@ class OrganizationFactoryTestCase(TestCase):
         OrganizationFactory should be able to generate plugins with a realistic logo for several
         languages.
         """
-        organization = OrganizationFactory(page_languages=["fr", "en"], fill_logo=True)
+        organization = OrganizationFactory(fill_logo=True, languages=["fr", "en"])
 
         # Check that the logo plugins were created as expected
         logo = organization.extended_object.placeholders.get(slot="logo")
@@ -41,9 +41,7 @@ class OrganizationFactoryTestCase(TestCase):
         OrganizationFactory should be able to generate plugins with a realistic banner for several
         languages.
         """
-        organization = OrganizationFactory(
-            page_languages=["fr", "en"], fill_banner=True
-        )
+        organization = OrganizationFactory(fill_banner=True, languages=["fr", "en"])
 
         # Check that the banner plugins were created as expected
         banner = organization.extended_object.placeholders.get(slot="banner")
@@ -67,7 +65,7 @@ class OrganizationFactoryTestCase(TestCase):
         several languages.
         """
         organization = OrganizationFactory(
-            page_languages=["fr", "en"], fill_description=True
+            fill_description=True, languages=["fr", "en"]
         )
 
         # Check that the description plugins were created as expected

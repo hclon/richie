@@ -38,7 +38,7 @@ class CoursePluginTestCase(TestCase):
                 fields = ["page"]
 
         page = create_i18n_page("A page")
-        course = CourseFactory(page_parent=page)
+        course = CourseFactory(parent=page)
         other_page_title = "other page"
         create_page(other_page_title, "richie/fullwidth.html", settings.LANGUAGE_CODE)
         plugin_form = CoursePluginModelForm()
@@ -46,9 +46,7 @@ class CoursePluginTestCase(TestCase):
         self.assertNotIn(other_page_title, plugin_form.as_table())
 
         # Create a fake course snapshot and make sure it's not available to select
-        snapshot = CourseFactory(
-            page_parent=course.extended_object, should_publish=True
-        )
+        snapshot = CourseFactory(parent=course.extended_object, should_publish=True)
         self.assertNotIn(snapshot.extended_object.get_title(), plugin_form.as_table())
 
     def test_cms_plugins_course_render_on_public_page(self):
@@ -57,10 +55,10 @@ class CoursePluginTestCase(TestCase):
         """
         # Create an Course with a page in both english and french
         subjects = SubjectFactory.create_batch(4)
-        organization = OrganizationFactory(page_title="public title")
+        organization = OrganizationFactory(title="public title")
 
         course = CourseFactory(
-            page_title={"en": "public title", "fr": "titre public"},
+            title={"en": "public title", "fr": "titre public"},
             fill_organizations=[organization],
             fill_subjects=subjects,
         )
@@ -162,7 +160,7 @@ class CoursePluginTestCase(TestCase):
         self.client.login(username=staff.username, password="password")
 
         # Create a Course
-        course = CourseFactory(page_title="public title")
+        course = CourseFactory(title="public title")
         course_page = course.extended_object
 
         # Create a page to add the plugin to

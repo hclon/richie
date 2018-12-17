@@ -36,14 +36,14 @@ class CourseRunCMSTestCase(CMSTestCase):
         organizations = OrganizationFactory.create_batch(4)
 
         course = CourseFactory(
-            page_title="Very interesting course",
+            title="Very interesting course",
             fill_organizations=organizations,
             fill_subjects=subjects,
             should_publish=True,
         )
         course_run = CourseRunFactory(
-            page_title="first session",
-            page_parent=course.extended_object,
+            title="first session",
+            parent=course.extended_object,
             resource_link="https://www.example.com/enroll",
             enrollment_start=datetime(2018, 10, 21),
             enrollment_end=datetime(2019, 1, 18),
@@ -148,14 +148,14 @@ class CourseRunCMSTestCase(CMSTestCase):
         organizations = OrganizationFactory.create_batch(4)
 
         course = CourseFactory(
-            page_title="Very interesting course",
+            title="Very interesting course",
             fill_organizations=organizations,
             fill_subjects=subjects,
             should_publish=True,
         )
         course_run = CourseRunFactory(
-            page_title="first session",
-            page_parent=course.extended_object,
+            title="first session",
+            parent=course.extended_object,
             resource_link="https://www.example.com/enroll",
             enrollment_start=datetime(2018, 10, 21),
             enrollment_end=datetime(2019, 1, 18),
@@ -252,7 +252,7 @@ class CourseRunCMSTestCase(CMSTestCase):
         """
         course = CourseFactory(should_publish=True)
         course_run = CourseRunFactory(
-            page_parent=course.extended_object, should_publish=True
+            parent=course.extended_object, should_publish=True
         )
 
         url = course_run.extended_object.get_absolute_url()

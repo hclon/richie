@@ -32,7 +32,7 @@ class SubjectModelsTestCase(TestCase):
         """
         subject = SubjectFactory(should_publish=True)
         courses = CourseFactory.create_batch(
-            3, page_title="my title", fill_subjects=[subject], should_publish=True
+            3, fill_subjects=[subject], title="my title", should_publish=True
         )
         retrieved_courses = subject.get_courses()
 
@@ -51,7 +51,7 @@ class SubjectModelsTestCase(TestCase):
         """
         subject = SubjectFactory(should_publish=True)
         CourseFactory(
-            page_title={"en": "my title", "fr": "mon titre"},
+            title={"en": "my title", "fr": "mon titre"},
             fill_subjects=[subject],
             should_publish=True,
         )
@@ -74,12 +74,10 @@ class SubjectModelsTestCase(TestCase):
 
         subject = SubjectFactory(should_publish=True)
         course = CourseFactory(
-            page_parent=root_page, fill_subjects=[subject], should_publish=True
+            parent=root_page, fill_subjects=[subject], should_publish=True
         )
         CourseFactory(
-            page_parent=course.extended_object,
-            fill_subjects=[subject],
-            should_publish=True,
+            parent=course.extended_object, fill_subjects=[subject], should_publish=True
         )
 
         self.assertEqual(Course.objects.count(), 4)

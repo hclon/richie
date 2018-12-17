@@ -50,8 +50,7 @@ class PersonPluginTestCase(CMSTestCase):
 
         # Create a Person
         person = PersonFactory(
-            page_title={"en": "person title", "fr": "titre personne"},
-            first_name="Meimei",
+            first_name="Meimei", title={"en": "person title", "fr": "titre personne"}
         )
         person_page = person.extended_object
 
