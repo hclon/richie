@@ -1,7 +1,7 @@
 # Gunicorn-django settings
 bind = ["0.0.0.0:8000"]
 name = "richie"
-python_path = "/app"
+python_path = "/app/sandbox"
 
 # Run
 graceful_timeout = 90

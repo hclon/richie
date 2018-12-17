@@ -14,7 +14,7 @@ from configurations.wsgi import get_wsgi_application  # noqa
 from raven.contrib.django.raven_compat.middleware.wsgi import Sentry
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
-os.environ.setdefault("DJANGO_CONFIGURATION", "Development")
+os.environ.setdefault("DJANGO_CONFIGURATION", "Production")
 
 
 application = Sentry(get_wsgi_application())  # pylint: disable=invalid-name
