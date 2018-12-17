@@ -141,7 +141,6 @@ class CourseRunAdmin(FrontendEditableAdminMixin, PageExtensionAdmin):
 
     list_display = ["title"]
     frontend_editable_fields = (
-        "languages",
         "resource_link",
         "start",
         "end",

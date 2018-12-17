@@ -49,7 +49,6 @@ class CourseRunCMSTestCase(CMSTestCase):
             enrollment_end=datetime(2019, 1, 18),
             start=datetime(2018, 12, 10),
             end=datetime(2019, 2, 14),
-            languages=["en", "fr"],
         )
         page = course_run.extended_object
 
@@ -131,7 +130,6 @@ class CourseRunCMSTestCase(CMSTestCase):
             'href="https://www.example.com/enroll">Enroll now</a>',
             html=True,
         )
-        self.assertContains(response, "<dt>Languages</dt><dd>English, French</dd>")
 
     @mock.patch.object(
         CourseRun, "state", new_callable=mock.PropertyMock, return_value="is_open"
@@ -161,7 +159,6 @@ class CourseRunCMSTestCase(CMSTestCase):
             enrollment_end=datetime(2019, 1, 18),
             start=datetime(2018, 12, 10),
             end=datetime(2019, 2, 14),
-            languages=["en", "fr"],
         )
         page = course_run.extended_object
 
@@ -244,7 +241,6 @@ class CourseRunCMSTestCase(CMSTestCase):
             'href="https://www.example.com/enroll">Enroll now</a>',
             html=True,
         )
-        self.assertContains(response, "<dt>Languages</dt><dd>English, French</dd>")
 
     def test_templates_course_run_detail_no_index(self):
         """
